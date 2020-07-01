@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<header>
+	<h1>Spam Detector</h1>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/main.css')}}">
+</header>
+
+<div id="form">
+
+<div class="fish" id="fish"></div>
+<div class="fish" id="fish2"></div>
+
+<form id="waterform" method="post" action="/predict">
+<div class="formgroup" id="message-form">
+    <label for="message">Enter your message</label>
+    <textarea id="message" name="message"></textarea>
+</div>
+	<input type="submit" value="Check" />
+</form>
+{% if msg==1 %}
+	<h1 color='red'>This is Spam Message.</h1>
+{% elif msg==0 %}
+	<h1 color='yellow'>This is not a Spam Message</h1>
+{% endif %}
+</div>
+<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='js/main.js')}}">
+</html>
